@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol DMDrawingBoardViewDelegate <NSObject>
+
+- (void)sendData:(NSData *)data;
+
+@end
 @interface DMDrawingBoardView : UIView
 
+@property (nonatomic, weak) id<DMDrawingBoardViewDelegate> delegate;
 @end

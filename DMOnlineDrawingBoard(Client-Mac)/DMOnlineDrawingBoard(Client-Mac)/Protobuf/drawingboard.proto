@@ -7,4 +7,6 @@ message DMPoint {
 message DMStroke {
     repeated DMPoint points = 1;
 }
-
+message DMPaint {
+    repeated DMStroke strokes = 1;
+}

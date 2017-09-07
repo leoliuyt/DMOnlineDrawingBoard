@@ -28,6 +28,7 @@
 CF_EXTERN_C_BEGIN
 
 @class DMPoint;
+@class DMStroke;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -72,6 +73,20 @@ typedef GPB_ENUM(DMStroke_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<DMPoint*> *pointsArray;
 /** The number of items in @c pointsArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger pointsArray_Count;
+
+@end
+
+#pragma mark - DMPaint
+
+typedef GPB_ENUM(DMPaint_FieldNumber) {
+  DMPaint_FieldNumber_StrokesArray = 1,
+};
+
+@interface DMPaint : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<DMStroke*> *strokesArray;
+/** The number of items in @c strokesArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger strokesArray_Count;
 
 @end
 

@@ -55,6 +55,12 @@
 {
     if(self.isChanging){
         [self setNeedsDisplay];
+        if ([self.delegate respondsToSelector:@selector(sendData:)]) {
+            DMPaint *paint = [DMPaint new];
+            paint.strokesArray = [self.strokes copy];
+            NSData *data = [paint data];
+            [self.delegate sendData:data];
+        }
     }
 }
 

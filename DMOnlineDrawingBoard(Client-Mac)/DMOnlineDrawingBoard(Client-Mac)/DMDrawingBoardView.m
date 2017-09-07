@@ -64,6 +64,12 @@
     
 }
 
+- (void)setPaint:(DMPaint *)paint
+{
+    _paint = paint;
+    [self setNeedsDisplay:YES];
+}
+
 - (CVReturn)getFrameForTime:(const CVTimeStamp *)outputTime {
     NSLog(@"%s,%@",__func__,[NSThread mainThread]);
     if(self.isChanging){
@@ -140,7 +146,7 @@ static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTimeSt
     [super drawRect:dirtyRect];
     
 //    NSLog(@"%s",__func__);
-    [self.strokes enumerateObjectsUsingBlock:^(DMStroke * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.paint.strokesArray enumerateObjectsUsingBlock:^(DMStroke * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSBezierPath *path = [NSBezierPath bezierPath];
         path.lineWidth = 4;
         path.lineCapStyle = kCGLineCapRound;

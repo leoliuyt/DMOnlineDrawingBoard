@@ -7,7 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Drawingboard.pbobjc.h"
 
 @interface DMDrawingBoardView : NSView
 
+@property (nonatomic, strong) DMPaint *paint;
 @end

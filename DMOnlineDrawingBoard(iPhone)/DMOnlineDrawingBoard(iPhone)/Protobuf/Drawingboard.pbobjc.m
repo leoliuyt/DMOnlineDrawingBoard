@@ -139,6 +139,49 @@ typedef struct DMStroke__storage_ {
 
 @end
 
+#pragma mark - DMPaint
+
+@implementation DMPaint
+
+@dynamic strokesArray, strokesArray_Count;
+
+typedef struct DMPaint__storage_ {
+  uint32_t _has_storage_[1];
+  NSMutableArray *strokesArray;
+} DMPaint__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "strokesArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(DMStroke),
+        .number = DMPaint_FieldNumber_StrokesArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(DMPaint__storage_, strokesArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[DMPaint class]
+                                     rootClass:[DrawingboardRoot class]
+                                          file:DrawingboardRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(DMPaint__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 
 #pragma clang diagnostic pop
 
