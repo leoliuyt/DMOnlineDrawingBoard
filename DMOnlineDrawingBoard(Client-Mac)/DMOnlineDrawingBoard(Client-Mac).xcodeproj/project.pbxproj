@@ -12,6 +12,7 @@
 		6B3D15F81F60EB1F0029E58D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D15F71F60EB1F0029E58D /* ViewController.m */; };
 		6B3D15FA1F60EB1F0029E58D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D15F91F60EB1F0029E58D /* Assets.xcassets */; };
 		6B3D15FD1F60EB1F0029E58D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D15FB1F60EB1F0029E58D /* Main.storyboard */; };
+		E678C579B623E8996A3D903F /* libPods-DMOnlineDrawingBoard(Client-Mac).a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBB7D2C5F0AFF99E54E600A /* libPods-DMOnlineDrawingBoard(Client-Mac).a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		6B3D15F91F60EB1F0029E58D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B3D15FC1F60EB1F0029E58D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6B3D15FE1F60EB1F0029E58D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99124DF3BAC2F7988BC4D8CC /* Pods-DMOnlineDrawingBoard(Client-Mac).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMOnlineDrawingBoard(Client-Mac).release.xcconfig"; path = "Pods/Target Support Files/Pods-DMOnlineDrawingBoard(Client-Mac)/Pods-DMOnlineDrawingBoard(Client-Mac).release.xcconfig"; sourceTree = "<group>"; };
+		BCBB7D2C5F0AFF99E54E600A /* libPods-DMOnlineDrawingBoard(Client-Mac).a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DMOnlineDrawingBoard(Client-Mac).a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8CDF9D8DDAB70EA8DC2DCD9 /* Pods-DMOnlineDrawingBoard(Client-Mac).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMOnlineDrawingBoard(Client-Mac).debug.xcconfig"; path = "Pods/Target Support Files/Pods-DMOnlineDrawingBoard(Client-Mac)/Pods-DMOnlineDrawingBoard(Client-Mac).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E678C579B623E8996A3D903F /* libPods-DMOnlineDrawingBoard(Client-Mac).a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		676679E201A98660046A19A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCBB7D2C5F0AFF99E54E600A /* libPods-DMOnlineDrawingBoard(Client-Mac).a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		67893BF0EF554E0BBE0AEF6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F8CDF9D8DDAB70EA8DC2DCD9 /* Pods-DMOnlineDrawingBoard(Client-Mac).debug.xcconfig */,
+				99124DF3BAC2F7988BC4D8CC /* Pods-DMOnlineDrawingBoard(Client-Mac).release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6B3D15E41F60EB1F0029E58D = {
 			isa = PBXGroup;
 			children = (
 				6B3D15EF1F60EB1F0029E58D /* DMOnlineDrawingBoard(Client-Mac) */,
 				6B3D15EE1F60EB1F0029E58D /* Products */,
+				67893BF0EF554E0BBE0AEF6A /* Pods */,
+				676679E201A98660046A19A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B3D16011F60EB1F0029E58D /* Build configuration list for PBXNativeTarget "DMOnlineDrawingBoard(Client-Mac)" */;
 			buildPhases = (
+				EF59CA583E2B7719C3DFDE3B /* [CP] Check Pods Manifest.lock */,
 				6B3D15E91F60EB1F0029E58D /* Sources */,
 				6B3D15EA1F60EB1F0029E58D /* Frameworks */,
 				6B3D15EB1F60EB1F0029E58D /* Resources */,
+				0A67E1B67D6680E03EEA6693 /* [CP] Embed Pods Frameworks */,
+				31482969E6C82D62A0FCAB09 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -107,7 +134,8 @@
 				TargetAttributes = {
 					6B3D15EC1F60EB1F0029E58D = {
 						CreatedOnToolsVersion = 8.3.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = VX3477C4M7;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -140,6 +168,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A67E1B67D6680E03EEA6693 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DMOnlineDrawingBoard(Client-Mac)/Pods-DMOnlineDrawingBoard(Client-Mac)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		31482969E6C82D62A0FCAB09 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DMOnlineDrawingBoard(Client-Mac)/Pods-DMOnlineDrawingBoard(Client-Mac)-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF59CA583E2B7719C3DFDE3B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6B3D15E91F60EB1F0029E58D /* Sources */ = {
@@ -257,25 +333,34 @@
 		};
 		6B3D16021F60EB1F0029E58D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8CDF9D8DDAB70EA8DC2DCD9 /* Pods-DMOnlineDrawingBoard(Client-Mac).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VX3477C4M7;
 				INFOPLIST_FILE = "DMOnlineDrawingBoard(Client-Mac)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yiqi.DMOnlineDrawingBoard-Client-Mac-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "de4e9fba-2fa7-47a1-9811-21ff8b1457f4";
+				PROVISIONING_PROFILE_SPECIFIER = mac20170905;
 			};
 			name = Debug;
 		};
 		6B3D16031F60EB1F0029E58D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99124DF3BAC2F7988BC4D8CC /* Pods-DMOnlineDrawingBoard(Client-Mac).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "DMOnlineDrawingBoard(Client-Mac)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yiqi.DMOnlineDrawingBoard-Client-Mac-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -298,6 +383,7 @@
 				6B3D16031F60EB1F0029E58D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
