@@ -12,8 +12,10 @@
 		6B3D15F81F60EB1F0029E58D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D15F71F60EB1F0029E58D /* ViewController.m */; };
 		6B3D15FA1F60EB1F0029E58D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D15F91F60EB1F0029E58D /* Assets.xcassets */; };
 		6B3D15FD1F60EB1F0029E58D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D15FB1F60EB1F0029E58D /* Main.storyboard */; };
-		6B3D160E1F60F0D60029E58D /* Drawingboard.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D160C1F60F0D60029E58D /* Drawingboard.pbobjc.m */; };
+		6B3D160E1F60F0D60029E58D /* Drawingboard.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D160C1F60F0D60029E58D /* Drawingboard.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6B3D160F1F60F0D60029E58D /* drawingboard.proto in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D160D1F60F0D60029E58D /* drawingboard.proto */; };
+		6B3D16181F60F6A20029E58D /* DMDrawingBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D16171F60F6A20029E58D /* DMDrawingBoardView.m */; };
+		6B3D161B1F60F77C0029E58D /* DMPoint+DM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D161A1F60F77C0029E58D /* DMPoint+DM.m */; };
 		E678C579B623E8996A3D903F /* libPods-DMOnlineDrawingBoard(Client-Mac).a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBB7D2C5F0AFF99E54E600A /* libPods-DMOnlineDrawingBoard(Client-Mac).a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,10 @@
 		6B3D160B1F60F0D60029E58D /* Drawingboard.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drawingboard.pbobjc.h; sourceTree = "<group>"; };
 		6B3D160C1F60F0D60029E58D /* Drawingboard.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drawingboard.pbobjc.m; sourceTree = "<group>"; };
 		6B3D160D1F60F0D60029E58D /* drawingboard.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = drawingboard.proto; sourceTree = "<group>"; };
+		6B3D16161F60F6A20029E58D /* DMDrawingBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDrawingBoardView.h; sourceTree = "<group>"; };
+		6B3D16171F60F6A20029E58D /* DMDrawingBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDrawingBoardView.m; sourceTree = "<group>"; };
+		6B3D16191F60F77C0029E58D /* DMPoint+DM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DMPoint+DM.h"; sourceTree = "<group>"; };
+		6B3D161A1F60F77C0029E58D /* DMPoint+DM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DMPoint+DM.m"; sourceTree = "<group>"; };
 		99124DF3BAC2F7988BC4D8CC /* Pods-DMOnlineDrawingBoard(Client-Mac).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMOnlineDrawingBoard(Client-Mac).release.xcconfig"; path = "Pods/Target Support Files/Pods-DMOnlineDrawingBoard(Client-Mac)/Pods-DMOnlineDrawingBoard(Client-Mac).release.xcconfig"; sourceTree = "<group>"; };
 		BCBB7D2C5F0AFF99E54E600A /* libPods-DMOnlineDrawingBoard(Client-Mac).a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DMOnlineDrawingBoard(Client-Mac).a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8CDF9D8DDAB70EA8DC2DCD9 /* Pods-DMOnlineDrawingBoard(Client-Mac).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMOnlineDrawingBoard(Client-Mac).debug.xcconfig"; path = "Pods/Target Support Files/Pods-DMOnlineDrawingBoard(Client-Mac)/Pods-DMOnlineDrawingBoard(Client-Mac).debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +96,10 @@
 				6B3D15F11F60EB1F0029E58D /* AppDelegate.m */,
 				6B3D15F61F60EB1F0029E58D /* ViewController.h */,
 				6B3D15F71F60EB1F0029E58D /* ViewController.m */,
+				6B3D16191F60F77C0029E58D /* DMPoint+DM.h */,
+				6B3D161A1F60F77C0029E58D /* DMPoint+DM.m */,
+				6B3D16161F60F6A20029E58D /* DMDrawingBoardView.h */,
+				6B3D16171F60F6A20029E58D /* DMDrawingBoardView.m */,
 				6B3D15F91F60EB1F0029E58D /* Assets.xcassets */,
 				6B3D15FB1F60EB1F0029E58D /* Main.storyboard */,
 				6B3D15FE1F60EB1F0029E58D /* Info.plist */,
@@ -239,9 +249,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B3D161B1F60F77C0029E58D /* DMPoint+DM.m in Sources */,
 				6B3D15F81F60EB1F0029E58D /* ViewController.m in Sources */,
 				6B3D15F51F60EB1F0029E58D /* main.m in Sources */,
 				6B3D160E1F60F0D60029E58D /* Drawingboard.pbobjc.m in Sources */,
+				6B3D16181F60F6A20029E58D /* DMDrawingBoardView.m in Sources */,
 				6B3D15F21F60EB1F0029E58D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
