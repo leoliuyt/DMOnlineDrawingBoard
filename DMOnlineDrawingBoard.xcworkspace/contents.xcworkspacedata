@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:DMOnlineDrawingBoard(Client-Mac)/DMOnlineDrawingBoard(Client-Mac).xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DMOnlineDrawingBoard(Server)/DMOnlineDrawingBoard(Server).xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DMOnlineDrawingBoard(iPhone)/DMOnlineDrawingBoard(iPhone).xcodeproj">
+   </FileRef>
+</Workspace>
