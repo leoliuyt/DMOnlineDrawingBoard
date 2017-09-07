@@ -13,6 +13,10 @@
 		6B3D15921F60EA8B0029E58D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D15901F60EA8B0029E58D /* Main.storyboard */; };
 		6B3D15941F60EA8B0029E58D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D15931F60EA8B0029E58D /* Assets.xcassets */; };
 		6B3D15971F60EA8B0029E58D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D15951F60EA8B0029E58D /* LaunchScreen.storyboard */; };
+		6B3D16081F60F0970029E58D /* Drawingboard.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D16061F60F0970029E58D /* Drawingboard.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6B3D16091F60F0970029E58D /* drawingboard.proto in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D16071F60F0970029E58D /* drawingboard.proto */; };
+		6B3D16121F60F1070029E58D /* DMDrawingBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D16111F60F1070029E58D /* DMDrawingBoardView.m */; };
+		6B3D16151F60F1F10029E58D /* DMPoint+DM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D16141F60F1F10029E58D /* DMPoint+DM.m */; };
 		926F76378E48FBEE59F312AB /* libPods-DMOnlineDrawingBoard(iPhone).a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BA49DE9D1F726D9A0F809F /* libPods-DMOnlineDrawingBoard(iPhone).a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +32,13 @@
 		6B3D15931F60EA8B0029E58D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B3D15961F60EA8B0029E58D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B3D15981F60EA8B0029E58D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B3D16051F60F0970029E58D /* Drawingboard.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drawingboard.pbobjc.h; sourceTree = "<group>"; };
+		6B3D16061F60F0970029E58D /* Drawingboard.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drawingboard.pbobjc.m; sourceTree = "<group>"; };
+		6B3D16071F60F0970029E58D /* drawingboard.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = drawingboard.proto; sourceTree = "<group>"; };
+		6B3D16101F60F1070029E58D /* DMDrawingBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDrawingBoardView.h; sourceTree = "<group>"; };
+		6B3D16111F60F1070029E58D /* DMDrawingBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDrawingBoardView.m; sourceTree = "<group>"; };
+		6B3D16131F60F1F10029E58D /* DMPoint+DM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DMPoint+DM.h"; sourceTree = "<group>"; };
+		6B3D16141F60F1F10029E58D /* DMPoint+DM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DMPoint+DM.m"; sourceTree = "<group>"; };
 		9E78957A6FEE61B82655941D /* Pods-DMOnlineDrawingBoard(iPhone).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMOnlineDrawingBoard(iPhone).debug.xcconfig"; path = "Pods/Target Support Files/Pods-DMOnlineDrawingBoard(iPhone)/Pods-DMOnlineDrawingBoard(iPhone).debug.xcconfig"; sourceTree = "<group>"; };
 		B540FA2650308DF8125EFA52 /* Pods-DMOnlineDrawingBoard(iPhone).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMOnlineDrawingBoard(iPhone).release.xcconfig"; path = "Pods/Target Support Files/Pods-DMOnlineDrawingBoard(iPhone)/Pods-DMOnlineDrawingBoard(iPhone).release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,8 +76,13 @@
 		6B3D15861F60EA8B0029E58D /* DMOnlineDrawingBoard(iPhone) */ = {
 			isa = PBXGroup;
 			children = (
+				6B3D16041F60F0560029E58D /* Protobuf */,
 				6B3D158A1F60EA8B0029E58D /* AppDelegate.h */,
 				6B3D158B1F60EA8B0029E58D /* AppDelegate.m */,
+				6B3D16101F60F1070029E58D /* DMDrawingBoardView.h */,
+				6B3D16111F60F1070029E58D /* DMDrawingBoardView.m */,
+				6B3D16131F60F1F10029E58D /* DMPoint+DM.h */,
+				6B3D16141F60F1F10029E58D /* DMPoint+DM.m */,
 				6B3D158D1F60EA8B0029E58D /* ViewController.h */,
 				6B3D158E1F60EA8B0029E58D /* ViewController.m */,
 				6B3D15901F60EA8B0029E58D /* Main.storyboard */,
@@ -84,6 +100,16 @@
 				6B3D15881F60EA8B0029E58D /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6B3D16041F60F0560029E58D /* Protobuf */ = {
+			isa = PBXGroup;
+			children = (
+				6B3D16051F60F0970029E58D /* Drawingboard.pbobjc.h */,
+				6B3D16061F60F0970029E58D /* Drawingboard.pbobjc.m */,
+				6B3D16071F60F0970029E58D /* drawingboard.proto */,
+			);
+			path = Protobuf;
 			sourceTree = "<group>";
 		};
 		7ABCE194BE30B9BC3B0B55E7 /* Frameworks */ = {
@@ -164,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B3D16091F60F0970029E58D /* drawingboard.proto in Resources */,
 				6B3D15971F60EA8B0029E58D /* LaunchScreen.storyboard in Resources */,
 				6B3D15941F60EA8B0029E58D /* Assets.xcassets in Resources */,
 				6B3D15921F60EA8B0029E58D /* Main.storyboard in Resources */,
@@ -225,8 +252,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B3D16151F60F1F10029E58D /* DMPoint+DM.m in Sources */,
 				6B3D158F1F60EA8B0029E58D /* ViewController.m in Sources */,
 				6B3D158C1F60EA8B0029E58D /* AppDelegate.m in Sources */,
+				6B3D16081F60F0970029E58D /* Drawingboard.pbobjc.m in Sources */,
+				6B3D16121F60F1070029E58D /* DMDrawingBoardView.m in Sources */,
 				6B3D15891F60EA8B0029E58D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +381,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "DMOnlineDrawingBoard(iPhone)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yiqi.DMOnlineDrawingBoard-iPhone-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -363,6 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "DMOnlineDrawingBoard(iPhone)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yiqi.DMOnlineDrawingBoard-iPhone-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -388,6 +420,7 @@
 				6B3D159D1F60EA8B0029E58D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
