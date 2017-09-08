@@ -7,6 +7,7 @@
 //
 
 #import "DMPoint+DM.h"
+#import <Cocoa/Cocoa.h>
 
 @implementation DMPoint (DM)
 
@@ -22,4 +23,14 @@
 {
     return NSMakePoint(self.x, self.y);
 }
+
+//将iOS 左手坐标系转换成osx上的右手坐标系
+- (DMPoint *)convertCoordinate:(CGSize)size
+{
+    DMPoint *point = [DMPoint new];
+    point.x = size.width * self.x / self.boardW;
+    point.y =  size.height - size.height * self.y / self.boardH;
+    return point;
+}
+
 @end

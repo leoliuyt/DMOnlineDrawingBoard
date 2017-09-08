@@ -15,6 +15,8 @@
     DMPoint *point = [DMPoint new];
     point.x = aPoint.x;
     point.y = aPoint.y;
+    point.boardW = CGRectGetWidth([UIScreen mainScreen].bounds);
+    point.boardH = CGRectGetHeight([UIScreen mainScreen].bounds);
     return point;
 }
 

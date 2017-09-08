@@ -10,8 +10,9 @@
 
 @interface DMPoint (DM)
 
-+(instancetype)convertToDM:(NSPoint)aPoint;
++ (instancetype)convertToDM:(NSPoint)aPoint;
 
--(NSPoint)convertToCG;
+- (NSPoint)convertToCG;
 
+- (DMPoint *)convertCoordinate:(CGSize)size;
 @end

@@ -11,11 +11,14 @@
 #import <Masonry.h>
 #import <GCDAsyncSocket.h>
 #import "Drawingboard.pbobjc.h"
+#import "DMPoint+DM.h"
 
 @interface ViewController()<GCDAsyncSocketDelegate>
 
 @property (nonatomic, strong) DMDrawingBoardView *drawingBoardView;
 @property (nonatomic, strong) GCDAsyncSocket *clientSocket;
+
+@property (nonatomic, assign) CGSize size;
 
 @end
 
@@ -42,6 +45,22 @@
     [self.drawingBoardView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+}
+
+- (void)viewDidAppear
+{
+    [super viewDidAppear];
+    float  height = CGRectGetHeight([NSApplication sharedApplication].keyWindow.frame);
+    NSLog(@"height = %f",height);
+}
+
+- (void)viewDidLayout
+{
+    [super viewDidLayout];
+    [super viewDidAppear];
+    self.size = [NSApplication sharedApplication].keyWindow.frame.size;
+    NSLog(@"size = %@",NSStringFromSize(self.size));
 }
 
 - (void)readData
@@ -70,8 +89,18 @@
 {
     NSLog(@"%@",sock);
     NSError *error;
+    float  height = CGRectGetHeight([NSApplication sharedApplication].keyWindow.frame);
+    NSLog(@"height = %f",height);
     DMPaint *paint = [DMPaint parseFromData:data
                                       error:&error];
+    [paint.strokesArray enumerateObjectsUsingBlock:^(DMStroke * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:obj.pointsArray.count];
+        [obj.pointsArray enumerateObjectsUsingBlock:^(DMPoint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            DMPoint *dmPoint = [obj convertCoordinate:self.size];
+            [arr addObject:dmPoint];
+        }];
+        obj.pointsArray = [arr mutableCopy];
+    }];
     if (!error) {
         self.drawingBoardView.paint = paint;
     }
