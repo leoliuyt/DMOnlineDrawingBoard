@@ -48,11 +48,19 @@ static GPBFileDescriptor *DrawingboardRoot_FileDescriptor(void) {
 
 @dynamic x;
 @dynamic y;
+@dynamic scaleX;
+@dynamic scaleY;
+@dynamic boardW;
+@dynamic boardH;
 
 typedef struct DMPoint__storage_ {
   uint32_t _has_storage_[1];
   float x;
   float y;
+  float scaleX;
+  float scaleY;
+  float boardW;
+  float boardH;
 } DMPoint__storage_;
 
 // This method is threadsafe because it is initially called
@@ -79,6 +87,42 @@ typedef struct DMPoint__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeFloat,
       },
+      {
+        .name = "scaleX",
+        .dataTypeSpecific.className = NULL,
+        .number = DMPoint_FieldNumber_ScaleX,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(DMPoint__storage_, scaleX),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeFloat,
+      },
+      {
+        .name = "scaleY",
+        .dataTypeSpecific.className = NULL,
+        .number = DMPoint_FieldNumber_ScaleY,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(DMPoint__storage_, scaleY),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeFloat,
+      },
+      {
+        .name = "boardW",
+        .dataTypeSpecific.className = NULL,
+        .number = DMPoint_FieldNumber_BoardW,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(DMPoint__storage_, boardW),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeFloat,
+      },
+      {
+        .name = "boardH",
+        .dataTypeSpecific.className = NULL,
+        .number = DMPoint_FieldNumber_BoardH,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(DMPoint__storage_, boardH),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeFloat,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[DMPoint class]
@@ -88,6 +132,11 @@ typedef struct DMPoint__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(DMPoint__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\004\003\006\000\004\006\000\005\006\000\006\006\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
   }

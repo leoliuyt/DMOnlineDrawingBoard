@@ -52,6 +52,10 @@ NS_ASSUME_NONNULL_BEGIN
 typedef GPB_ENUM(DMPoint_FieldNumber) {
   DMPoint_FieldNumber_X = 1,
   DMPoint_FieldNumber_Y = 2,
+  DMPoint_FieldNumber_ScaleX = 3,
+  DMPoint_FieldNumber_ScaleY = 4,
+  DMPoint_FieldNumber_BoardW = 5,
+  DMPoint_FieldNumber_BoardH = 6,
 };
 
 @interface DMPoint : GPBMessage
@@ -59,6 +63,14 @@ typedef GPB_ENUM(DMPoint_FieldNumber) {
 @property(nonatomic, readwrite) float x;
 
 @property(nonatomic, readwrite) float y;
+
+@property(nonatomic, readwrite) float scaleX;
+
+@property(nonatomic, readwrite) float scaleY;
+
+@property(nonatomic, readwrite) float boardW;
+
+@property(nonatomic, readwrite) float boardH;
 
 @end
 

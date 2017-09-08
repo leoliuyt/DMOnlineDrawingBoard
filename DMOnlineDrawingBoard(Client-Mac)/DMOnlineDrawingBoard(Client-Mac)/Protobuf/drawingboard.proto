@@ -2,6 +2,10 @@ syntax = "proto3";
 message DMPoint {
     float x = 1;
     float y = 2;
+    float scaleX = 3;
+    float scaleY = 4;
+    float boardW = 5;
+    float boardH = 6;
 }
 
 message DMStroke {
